@@ -2,6 +2,6 @@
 Bare bones controls for an HTML5 video player. 
 
 Includes basic:
-> JS
-> Markup
-> CSS 
+- JS
+- Markup
+- CSS 
