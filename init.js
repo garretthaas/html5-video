@@ -14,7 +14,7 @@
         mobileControl = player.querySelector('.mobile-control');
     
     
-    // logic
+// logic
     function playControls() {
         activeToggle(btnPlayback);
         activeToggle(video);
@@ -112,7 +112,7 @@
         }
     }
 
-    // event listeners
+// event listeners
     video.addEventListener('click', playToggle);
     btnPlayback.addEventListener('click', playToggle);
     btnFull.addEventListener('click', openFullscreen);
