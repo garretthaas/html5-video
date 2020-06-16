@@ -1,0 +1,121 @@
+html body {
+    background: black;
+    color: white;
+}
+
+#player {
+    position: relative;
+}
+
+#player-video {
+    width: 100% !important;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+#player-video[data-state="is-inactive"], #player-video {
+    cursor: url("data:image/svg+xml,%3Csvg width='28' height='22' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23FFF' fill='none' fill-rule='evenodd'%3E%3Cpath d='M20.734 10.95L10.452 5.632v10.636l10.282-5.318z' stroke-width='.996' fill='%23FFF' stroke-linejoin='round'/%3E%3Crect stroke-width='2' x='1' y='1' width='26' height='19.6' rx='3.3'/%3E%3C/g%3E%3C/svg%3E"), pointer !important; 
+}
+
+#player-video[data-state="is-active"] {
+    cursor: url("data:image/svg+xml,%3Csvg width='29' height='22' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23FFF' fill='none' fill-rule='evenodd'%3E%3Crect stroke-width='2' x='1' y='1' width='26.2' height='19.6' rx='3.3'/%3E%3Cg fill='%23FFF' stroke-linejoin='round' stroke-width='1.2'%3E%3Cpath d='M10.8 5.7H9v10.2h1.8zM18.9 5.7h-1.8v10.2h1.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), pointer !important;
+}
+
+.gh-controls {
+    display: grid;
+    grid-template-columns: 5rem auto 7.7rem;
+}
+
+.mobile-control {
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='22' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23FFF' fill='none' fill-rule='evenodd'%3E%3Cpath d='M20.734 10.95L10.452 5.632v10.636l10.282-5.318z' stroke-width='.996' fill='%23FFF' stroke-linejoin='round'/%3E%3Crect stroke-width='2' x='1' y='1' width='26' height='19.6' rx='3.3'/%3E%3C/g%3E%3C/svg%3E");
+    width: 4rem;
+    height: 4em;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-control[data-state="is-active"] {
+    display: none;
+}
+
+span.current {
+    padding-left: 0.4rem;
+}
+
+.progressBar {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 5rem auto 5rem;
+}
+
+.timeBar {
+    width: 0;
+    height: 100%;
+    background-color: #ccc;
+    transition: width 1s cubic-bezier(0, 0.85, 0.38, 0.99);
+}
+
+
+.progressTime { 
+
+}
+
+.settings {
+    text-align: right;
+    cursor: pointer;
+}
+
+.settings div {
+    display: inline-block;
+}
+
+.btnPlay,
+.btnPause {
+    cursor: pointer;
+}
+
+.btnPlay::after {
+    content: 'Play';
+}
+.btnPlay[data-state="is-inactive"]::after {
+    content: 'Play';
+}
+
+.btnPlay[data-state="is-active"]::after {
+    content: 'Pause';
+}
+
+.btnMute {
+    position: relative;
+}
+
+.btnMute[data-state="is-active"]::after { 
+    height: 1px;
+    background: white;
+    width: 129%;
+    display: block;
+    position: absolute;
+    content: ' ';
+    top: 16px;
+    transform: rotate(12deg);
+    left: -7px;
+}
+
+@media only screen 
+  and (max-width: 770px) {
+    .gh-controls {
+        display: none;
+    }
+    .mobile-control {
+        display: block;
+    }
+}
